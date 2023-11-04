@@ -2,7 +2,7 @@ import request from "supertest";
 import app from "../../index";
 
 describe("Resize API", () => {
-  it("should return 400 if invalid width or height values are provided", async () => {
+  it("should return 400 status if invalid width or height values are provided", async () => {
     await request(app)
       .get("/api/resize?img=image&width=hi&height=200") //width is NaN
       .expect(400)
@@ -29,9 +29,9 @@ describe("Resize API", () => {
       });
   });
 
-  it("should resize and return the image", async () => {
+  it("should return 200, then resize and return the image", async () => {
     await request(app)
-      .get("/api/resize?img=cat&width=100&height=100") //ideal call
+      .get("/api/resize?img=dog&width=100&height=100") //ideal call
       .expect(200)
       .then((response) => {
         expect(response.headers["content-type"]).toBe("image/jpeg");

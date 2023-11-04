@@ -7,14 +7,23 @@ interface MyQuery {
   height: string;
 }
 
-const validator = (req: Request, res: Response, next: NextFunction) => {
+const validator = (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+): Response | void => {
   //all data checks goes here
   const { img, width, height } = req.query as unknown as MyQuery;
 
-  const parsedWidth = parseInt(width, 10);
-  const parsedHeight = parseInt(height, 10);
+  const parsedWidth: number = (width as unknown as number) * 1;
+  const parsedHeight: number = (height as unknown as number) * 1;
 
-  if (isNaN(parsedWidth) || isNaN(parsedHeight)) {
+  if (
+    isNaN(parsedWidth) ||
+    isNaN(parsedHeight) ||
+    parsedWidth <= 0 ||
+    parsedHeight <= 0
+  ) {
     return res.status(400).json({ error: "Invalid width or height values" });
   }
   if (!img) {
