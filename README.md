@@ -18,7 +18,7 @@ This project provides an API for resizing images based on query parameters. It u
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/image-processing.git
+   git clone https://github.com/6Hossam-Ali9/Image-Processing-API.git
    ```
 
 2. Install dependencies:
