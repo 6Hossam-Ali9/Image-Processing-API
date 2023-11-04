@@ -7,7 +7,6 @@ An API that changes an image's height and width using query parameters.
 - [Introduction](#introduction)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Testing](#testing)
 - [Scripts](#scripts)
 
 ## Introduction
@@ -51,14 +50,6 @@ instead of `myImage` you have to choose one of the images that exist in the `inp
 
 ```bash
 http://localhost:3000/api/resize?img=myImage&width=100&height=100
-```
-
-## Testing
-
-Run tests using the following command:
-
-```bash
-npm run test
 ```
 
 ## Scripts
