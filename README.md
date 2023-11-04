@@ -40,7 +40,9 @@ This project provides an API for resizing images based on query parameters. It u
 Make a GET request to the `/api/resize` endpoint with the required query parameters:
 
 `img`: Image name
+
 `width`: New width
+
 `height`: New height
 
 Example:
@@ -62,8 +64,13 @@ npm run test
 ## Scripts
 
 `npm run format`: Format code using Prettier.
+
 `npm run lint`: Run ESLint for linting.
+
 `npm run start`: Start the development server using Nodemon.
+
 `npm run build`: Build the TypeScript project.
+
 `npm run test`: Run tests using Jasmine.
+
 `npm run production`: Build and run the production server.
